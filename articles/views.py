@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Article
 
 def articles_list(request):
@@ -18,5 +18,7 @@ def articles_by_author(request, author_name):
 
 def article_detail(request, article_id):
     article = get_object_or_404(Article, id=article_id)
-    context = {'article': article}
+    context = {
+        'article': article
+    }
     return render(request, 'articles/article_detail.html', context)

@@ -11,7 +11,7 @@
         <ul>
             {% for article in articles %}
                 <li>
-                    <h2>{{ article.title }} ({{ article.author }})</h2>
+                    <h2><a href="{% url 'article_detail' article.id %}">{{ article.title }} ({{ article.author }})</a></h2>
                     <p>{{ article.text }}</p>
                     <small>Опубліковано: {{ article.pub_date }}</small>
                 </li>
