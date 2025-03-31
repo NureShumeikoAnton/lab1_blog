@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Всі статті</title>
+</head>
+<body>
+    <h1>Всі статті</h1>
+    {% if articles %}
+        <ul>
+            {% for article in articles %}
+                <li>
+                    <h2>{{ article.title }} ({{ article.author }})</h2>
+                    <p>{{ article.text }}</p>
+                    <small>Опубліковано: {{ article.pub_date }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Немає статей для відображення.</p>
+    {% endif %}
+</body>
+</html>
